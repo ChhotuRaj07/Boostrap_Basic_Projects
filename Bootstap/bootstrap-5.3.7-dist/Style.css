@@ -1,0 +1,71 @@
+*{
+    overflow-x: hidden;
+}
+.fixed{
+     border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     color: brown;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.Fluid{
+     border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+.Responsive {
+     border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+.Auto{
+      border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+
+.custom{
+      border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+
+.offset{
+      border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+
+.Nestted{
+     border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: skyblue;
+}
+.g{
+     border: 3px solid rgb(245, 2, 2); align-content: center ; display: flex; justify-content: center;
+     font-size: x-large;
+     font-weight: 700;
+     margin-top: 10px;
+    margin-left: 5px;
+    color: rgb(3, 28, 38);
+}

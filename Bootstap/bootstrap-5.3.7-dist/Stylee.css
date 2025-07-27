@@ -1,0 +1,22 @@
+*{
+    margin-top: 5rem;
+    overflow: hidden;
+}
+#raw{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2;
+}
+
+.grid{
+    border: 1px solid black;
+    border-radius: 2px;
+    padding:20px 1px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 👈 Correct way */
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 20px rgb(255, 68, 68)); /* 🔥 Red glow */
+    transition: 0.2s ease;
+}
