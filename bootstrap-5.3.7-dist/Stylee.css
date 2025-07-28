@@ -1,0 +1,49 @@
+*{
+   
+    overflow: hidden;
+}
+#raw{
+     margin-top: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2;
+}
+
+.grid{
+     margin-right: 2.7px;
+    border: 1px solid rgb(23, 20, 20);
+    border-radius: 2px;
+    padding:20px 1px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 👈 Correct way */
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 20px rgb(255, 68, 68)); /* 🔥 Red glow */
+    transition: 0.2s ease;
+}
+#raw1{
+    margin-top: 4PX;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 2;
+}
+
+.grid{
+    border: 1px solid black;
+    border-radius: 2px;
+    padding:20px 1px;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 👈 Correct way */
+    cursor: pointer;
+    filter: drop-shadow(1px 1px 20px rgb(255, 68, 68)); /* 🔥 Red glow */
+    transition: 0.2s ease;
+}
+img{
+     width: 20%;
+     filter: contrast(200%);
+     filter: brightness(-20%);
+  object-fit: cover; /* 👈 You can change this to 'contain', 'fill', etc. */
+}
