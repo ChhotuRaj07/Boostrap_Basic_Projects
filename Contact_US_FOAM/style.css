@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+#Foam{
+    padding-left: 50px;
+}
+
+P{
+    line-height: 0.6;
+     margin-top: 40px; 
+     font-size: 16.5px;
+     font-family: serif;
+     letter-spacing: 0.5px;
+     font-weight: bold;
+}
+input{
+    width: 100%;
+    font-size: 12px;
+    height: 30px;
+    padding-left: 8px;
+    max-width: 650px; /* wider input box */
+}
+.Message,input{
+    padding: 3px;
+    border-radius: 5px;
+}
+
+
+.box1{
+    position: relative;
+    top: 80px;
+    left: 230px;
+    margin-top: 200px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+#outer_border {
+    border: 2px solid rebeccapurple;  /* Customize border color/size */
+    border-radius: 15px;              /* Optional rounded corners */
+    padding: 20px 30px;                    /* Inner space */
+    max-width: 800px;
+    margin: 10px auto;                /* Center the box horizontally */
+    background-color: #f9f9f9;        /* Optional light background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);  /* Optional shadow */
+    /* background-color: blue; */
+}
+
