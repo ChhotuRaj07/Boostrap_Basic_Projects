@@ -1,0 +1,37 @@
+html ,body {
+    background-color: black;
+    color: white;
+}
+
+
+.AERO{
+    font-size: 67px;
+    /* background-color: yellow; */
+    margin-top: 200px;
+    font-weight: 500;
+    margin-left: 15px;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.AERO1{
+    font-size: 67px;
+    margin-top: 270px;
+    margin-left: 20px;
+     font-weight: 500;
+    font-family: 'Courier New', Courier, monospace
+}
+
+.AERO2{
+    font-size: 15px;
+    margin-top: 3px;
+    margin-left:300px;
+    line-height: 0px;
+     font-weight: 500;
+    font-family: 'Courier New', Courier, monospace
+}
+
+#Aboutpage {
+    margin-top: 15px;
+    font-family: serif;
+}
+
