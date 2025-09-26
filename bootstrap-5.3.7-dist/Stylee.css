@@ -11,6 +11,11 @@
     box-shadow: 2;
 }
 
+#raw :hover {
+    background-color: rgba(0, 0, 0, 0.82);
+    color: white;
+}
+
 .grid{
      margin-right: 2.7px;
     border: 1px solid rgb(23, 20, 20);
@@ -29,6 +34,11 @@
     justify-content: center;
     text-align: center;
     box-shadow: 2;
+}
+
+#raw1 :hover {
+    background-color: rgba(0, 0, 0, 0.807);
+    color: white;
 }
 
 .grid{

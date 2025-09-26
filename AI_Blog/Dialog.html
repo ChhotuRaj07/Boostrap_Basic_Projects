@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Go();">Alert</button>
+      <button onclick="Go1();">confirm</button>
+       <button onclick="Go2();">Prompt</button>
+      
+
+
+<script>
+     function Go2(){
+        x = prompt("Enter Your Name!!!")
+        if (x == null || x == "") {
+            alert("Sorry !!")
+        } else {
+            alert("Welcome." + x)
+        }
+        
+    }
+
+    function Go(){
+        alert("This is a Warining !!!")
+    }
+
+     function Go1(){
+        x = confirm("Are You Sure !!!");
+        if (x) {
+            alert("User Agreed");
+        } else {
+            alert("User rejected");
+        }
+    }
+</script>
+</body>
+</html>

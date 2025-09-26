@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let n = parseInt(prompt("Enter Your Atleast 5 Hobbies !"));
+        let hobbies = [];
+
+        for (let i = 0; i < n; i++){
+            hobbies.push(prompt("Enter Hobbie" + (i + 1)+ ":"));
+        }
+
+        let choice;
+       do {
+      alert("Your hobbies are: " + hobbies.join(", "));
+      choice = parseInt(prompt(
+        "Choose an option:\n" +
+        "1. Sort hobbies\n" +
+        "2. Reverse hobbies\n" +
+        "3. Search a hobby\n" +
+        "4. Exit"
+      ));
+      
+       switch (choice) {
+        case 1:
+          hobbies.sort();
+          alert("Hobbies sorted: " + hobbies.join(", "));
+          break;
+        case 2:
+          hobbies.reverse();
+          alert("Hobbies reversed: " + hobbies.join(", "));
+          break;
+        case 3:
+          let search = prompt("Enter hobby to search:");
+          if (hobbies.includes(search)) {
+            alert(search + " found in hobbies.");
+          } else {
+            alert(search + " not found in hobbies.");
+          }
+          break;
+        case 4:
+          alert("Exiting...");
+          break;
+        default:
+          alert("Invalid choice.");
+      }
+    } while (choice !== 4);
+
+
+
+    </script>
+</body>
+</html>

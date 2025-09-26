@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>String Methods Demo</title>
+</head>
+<body>
+  <h2>String Manipulation</h2>
+  <input type="text" id="userInput" placeholder="Enter your string">
+  <button onclick="showResults()">Show Results</button>
+
+  <script>
+    function showResults() {
+      let str = document.getElementById("userInput").value;
+
+      document.write("1. Length: " + str.length + "<br>");
+      document.write("2. To Upper Case: " + str.toUpperCase() + "<br>");
+      document.write("3. To Lower Case: " + str.toLowerCase() + "<br>");
+      document.write("4. Trim: " + str.trim() + "<br>");
+      document.write("5. Slice (0,5): " + str.slice(0, 5) + "<br>");
+      document.write("6. Substring (1,4): " + str.substring(1, 4) + "<br>");
+      document.write("7. Replace 'a' with 'X': " + str.replace('a', 'X') + "<br>");
+      document.write("8. ReplaceAll 'a' with 'X': " + str.replaceAll('a', 'X') + "<br>");
+      document.write("9. Concat with ' World': " + str.concat(" World") + "<br>");
+      document.write("10. CharAt (0): " + str.charAt(0) + "<br>");
+      document.write("11. CharCodeAt (0): " + str.charCodeAt(0) + "<br>");
+      document.write("12. Split by space: " + str.split(" ") + "<br>");
+      document.write("13. Includes 'a': " + str.includes("a") + "<br>");
+      document.write("14. StartsWith 'H': " + str.startsWith("H") + "<br>");
+      document.write("15. EndsWith 'd': " + str.endsWith("d") + "<br>");
+    }
+  </script>
+</body>
+</html>
