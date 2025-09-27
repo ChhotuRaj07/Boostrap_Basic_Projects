@@ -86,54 +86,48 @@
             <div class="grid col-1">END</div>
          </div>
 
-         <script>
-// create and style the screen at the top
-const screen = document.createElement('div');
-screen.id = 'screen';
-screen.style.width = '90%';
-screen.style.height = '50px';
-screen.style.border = '1px solid black';
-screen.style.margin = '10px auto';
-screen.style.padding = '5px';
-screen.style.fontSize = '20px';
-screen.style.whiteSpace = 'pre-wrap'; // keeps ENTER/newline
-screen.textContent = ''; // start empty
-document.body.insertBefore(screen, document.body.firstChild);
+            <script>
+         // create and style the screen at the top
+         const screen = document.createElement('div');
+         screen.id = 'screen';
+         screen.style.width = '90%';
+         screen.style.height = '50px';
+         screen.style.border = '1px solid black';
+         screen.style.margin = '10px auto';
+         screen.style.padding = '5px';
+         screen.style.fontSize = '20px';
+         screen.style.whiteSpace = 'pre-wrap'; // keeps ENTER/newline
+         screen.textContent = ''; // start empty
+         document.body.insertBefore(screen, document.body.firstChild);
 
-// state variables
-let capsLock = false;
+         // state variables
+         let capsLock = false;
 
-// handle clicks on keys
-document.querySelectorAll('.grid').forEach(key => {
-  key.addEventListener('click', () => {
-    let keyValue = key.textContent.trim();
+         // handle clicks on keys
+         document.querySelectorAll('.grid').forEach(key => {
+         key.addEventListener('click', () => {
+            let keyValue = key.textContent.trim();
 
-    if (keyValue === '<-') {
-      // backspace
-      screen.textContent = screen.textContent.slice(0, -1);
-    } else if (keyValue.toUpperCase() === 'CAPSLOCK' || keyValue.includes('CAPS')) {
-      capsLock = !capsLock;
-      key.style.backgroundColor = capsLock ? '#ccc' : ''; // visual feedback
-    } else if (keyValue.toUpperCase() === 'ENTER') {
-      screen.textContent += '\n';
-    } else if (keyValue === '-------') { // your spacebar placeholder
-      screen.textContent += ' ';
-    } else {
-      // normal characters
-      if (capsLock) {
-        screen.textContent += keyValue.toUpperCase();
-      } else {
-        screen.textContent += keyValue;
-      }
-    }
-  });
-});
-</script>
-
-         
-         
-
-
-
+            if (keyValue === '<-') {
+               // backspace
+               screen.textContent = screen.textContent.slice(0, -1);
+            } else if (keyValue.toUpperCase() === 'CAPSLOCK' || keyValue.includes('CAPS')) {
+               capsLock = !capsLock;
+               key.style.backgroundColor = capsLock ? '#ccc' : ''; // visual feedback
+            } else if (keyValue.toUpperCase() === 'ENTER') {
+               screen.textContent += '\n';
+            } else if (keyValue === '-------') { // your spacebar placeholder
+               screen.textContent += ' ';
+            } else {
+               // normal characters
+               if (capsLock) {
+               screen.textContent += keyValue.toUpperCase();
+               } else {
+               screen.textContent += keyValue;
+               }
+            }
+         });
+         });
+   </script>
 </body>
 </html>

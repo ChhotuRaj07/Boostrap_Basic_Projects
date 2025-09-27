@@ -1,53 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Result</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body {
+      background: linear-gradient(135deg, #d9faff, #f9f9f9);
+      min-height: 100vh;
+    }
+    .logo {
+      width: 80px;
+    }
+  </style>
 </head>
 <body>
-     <div class="d-flex justify-content-center align-content-center mt-5 gap-3">
-    <label><h2>Gujarat University</h2></label>
-    </div>
 
-    <div class="d-flex justify-content-center align-content-center mt-5 gap-3">
-    <label>Name:</label>
-    <input type="text" placeholder="Enter Your Name" >
-    </div>
-   
-    <div class="d-flex justify-content-center align-content-center mt-5 gap-2">
-    <label>Roll No: </label>
-    <input type="number" placeholder="Enter Your Roll No" >
-    </div>
-    <br>
-    <br>
-    <div class="d-flex align-content-center justify-content-center gap-2">
-        <label>Semster :</label>
-        <input type="text" placeholder="Enter Your Semster">
-    </div>
-    <br>
-    <br>
-    <br>
-   <div class="d-flex justify-content-center align-content-center gap-3">
-     <label><h6>Enter  Subjects Marks</h6> </label>
-    <input type="number" class="marks" placeholder="Subject Hindi Marks" required >
-    <input type="number" class="marks" placeholder="Subject Maths Marks" required>
-    <input type="number" class="marks" placeholder="Subject English Marks" required>
-    <input type="number" class="marks" placeholder="Subject Chemistry Marks" required>
-    <input type="number" class="marks" placeholder="Subject Physics Marks" required>
-   </div>
-   <div class="d-flex align-content-center justify-content-center gap-5 mt-5 p-5">
-    <button class="px-4 rounded-1 p-1" type="submit">Submit</button>
-    <button class="px-4 rounded-1 p-1" type="reset">Reset</button>
-   </div>
+<div class="container py-5">
+  <div class="text-center mb-4">
+    <img src="https://i.pinimg.com/736x/a5/62/cb/a562cbc335fbf3547eac4553245437bb.jpg" alt="Logo" class="logo mb-2">
+    <h2 class="fw-bold text-primary">Gujarat University</h2>
+  </div>
 
+  <!-- Form Card -->
+  <div class="card shadow-lg rounded-3">
+    <div class="card-body p-4">
+      <h4 class="card-title text-center mb-3">Student Information</h4>
 
+      <form id="resultForm">
+        <div class="row g-3 mb-3">
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Name</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter Your Name" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Roll No</label>
+            <input type="number" id="roll" class="form-control" placeholder="Enter Your Roll No" required>
+          </div>
+          <div class="col-md-4">
+            <label class="form-label fw-semibold">Semester</label>
+            <input type="text" id="semester" class="form-control" placeholder="Enter Your Semester" required>
+          </div>
+        </div>
 
-    <script>
-        
-        
-    </script>
+        <h5 class="mt-4 mb-3 text-center text-secondary">Enter Subject Marks</h5>
+        <div class="row g-3 mb-4">
+          <div class="col-md">
+            <input type="number" class="form-control marks" placeholder="Hindi Marks" required>
+          </div>
+          <div class="col-md">
+            <input type="number" class="form-control marks" placeholder="Maths Marks" required>
+          </div>
+          <div class="col-md">
+            <input type="number" class="form-control marks" placeholder="English Marks" required>
+          </div>
+          <div class="col-md">
+            <input type="number" class="form-control marks" placeholder="Chemistry Marks" required>
+          </div>
+          <div class="col-md">
+            <input type="number" class="form-control marks" placeholder="Physics Marks" required>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button class="btn btn-primary px-5" type="submit">Submit</button>
+          <button class="btn btn-outline-secondary px-5 ms-2" type="reset">Reset</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Result Section -->
+  <div id="result" class="mt-5"></div>
+</div>
+
+<script>
+document.getElementById('resultForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById('name').value;
+  const roll = document.getElementById('roll').value;
+  const semester = document.getElementById('semester').value;
+  const marksInputs = document.querySelectorAll('.marks');
+
+  let marks = [];
+  marksInputs.forEach(input => marks.push(Number(input.value)));
+
+  const totalMarks = 500; // 5 subjects * 100
+  const obtained = marks.reduce((a,b) => a+b, 0);
+  const percentage = (obtained / totalMarks) * 100;
+
+  // Grade logic + badge color
+  let grade = '';
+  let badgeClass = 'bg-danger';
+  if (percentage > 90) { grade = 'A+ Grade'; badgeClass = 'bg-success'; }
+  else if (percentage >= 70) { grade = 'A Grade'; badgeClass = 'bg-success'; }
+  else if (percentage >= 50) { grade = 'B Grade'; badgeClass = 'bg-warning'; }
+  else if (percentage >= 35) { grade = 'C Grade'; badgeClass = 'bg-warning'; }
+  else { grade = 'Fail'; badgeClass = 'bg-danger'; }
+
+  // Subject rows
+  let subjectsHTML = '';
+  marks.forEach((m, i) => {
+    subjectsHTML += `<tr><td>Subject ${i+1}</td><td>${m}</td></tr>`;
+  });
+
+  document.getElementById('result').innerHTML = `
+    <div class="card shadow-lg">
+      <div class="card-body">
+        <h3 class="card-title text-center mb-3 text-primary">Result</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Roll No:</strong> ${roll}</p>
+        <p><strong>Semester:</strong> ${semester}</p>
+
+        <table class="table table-bordered mt-3">
+          <thead class="table-light">
+            <tr><th>Subject</th><th>Marks</th></tr>
+          </thead>
+          <tbody>
+            ${subjectsHTML}
+            <tr class="table-light"><th>Total Marks</th><th>${totalMarks}</th></tr>
+            <tr class="table-light"><th>Obtained Marks</th><th>${obtained}</th></tr>
+            <tr class="table-light"><th>Percentage</th><th>${percentage.toFixed(2)}%</th></tr>
+          </tbody>
+        </table>
+        <div class="text-center fs-5 fw-bold">
+          <span class="badge ${badgeClass} px-4 py-2">${grade}</span>
+        </div>
+      </div>
+    </div>
+  `;
+});
+</script>
+
 </body>
 </html>
